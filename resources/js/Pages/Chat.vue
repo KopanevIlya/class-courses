@@ -41,7 +41,7 @@
                       <a
                         :href="`/storage/${file.path}`"
                         target="_blank"
-                        class="text-xs text-blue-200 hover:underline flex items-center"
+                        class="text-xs text-blue-400 hover:underline flex items-center"
                       >
                         <svg class="w-4 h-4 mr-1 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.656-5.656l-6.586 6.586"/>
@@ -55,10 +55,30 @@
             </div>
           </div>
           <!-- Форма отправки -->
-          <form @submit.prevent="sendMessage" class="flex flex-col sm:flex-row gap-2 items-stretch">
-            <input v-model="newMessage" class="flex-1 border rounded px-3 py-2" placeholder="Введите сообщение" />
-            <input type="file" multiple @change="handleFiles" class="block border rounded px-2 py-1" />
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" type="submit">Отправить</button>
+          <form @submit.prevent="sendMessage" class="flex flex-col sm:flex-row items-center gap-2 mt-2">
+            <input
+              v-model="newMessage"
+              class="flex-1 border rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:border-blue-400 transition"
+              placeholder="Введите сообщение"
+            />
+            <label class="border rounded px-3 py-2 bg-white cursor-pointer hover:bg-gray-100 transition flex items-center">
+              <input
+                type="file"
+                multiple
+                @change="handleFiles"
+                class="hidden"
+              />
+              Выбрать файлы
+            </label>
+            <span class="text-gray-500 text-sm truncate max-w-[150px]">
+              {{ files && files.length ? files.map(f => f.name).join(', ') : 'Файл не выбран' }}
+            </span>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition"
+              type="submit"
+            >
+              Отправить
+            </button>
           </form>
         </div>
       </div>
