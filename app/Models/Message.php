@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-// app/Models/Message.php
 class Message extends Model
 {
     protected $fillable = ['chat_id', 'user_id', 'body'];

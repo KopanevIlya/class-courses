@@ -30,19 +30,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { router } from '@inertiajs/vue3';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
 const props = defineProps({
   chat: Object,
   messages: Array,
 });
 
+const messages = ref(props.messages);
 const newMessage = ref('');
 const files = ref([]);
+let pollingInterval = null;
 
 function handleFiles(event) {
   files.value = Array.from(event.target.files);
+}
+
+function fetchMessages() {
+  fetch(`/chats/${props.chat.id}/messages`)
+    .then(res => res.json())
+    .then(data => {
+      messages.value = data;
+    });
 }
 
 function sendMessage() {
@@ -56,7 +67,16 @@ function sendMessage() {
     onSuccess: () => {
       newMessage.value = '';
       files.value = [];
+      fetchMessages();
     }
   });
 }
+
+onMounted(() => {
+  pollingInterval = setInterval(fetchMessages, 3000); // каждые 3 сек
+});
+
+onUnmounted(() => {
+  clearInterval(pollingInterval);
+});
 </script>

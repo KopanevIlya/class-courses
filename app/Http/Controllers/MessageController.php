@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Chat; // <-- ВАЖНО!
+use App\Models\Chat;
 
 class MessageController extends Controller
 {
@@ -29,8 +29,15 @@ class MessageController extends Controller
             }
         }
 
-        broadcast(new \App\Events\NewMessage($message))->toOthers();
+        // Можно убрать broadcast если не используешь websockets
+        // broadcast(new \App\Events\NewMessage($message))->toOthers();
 
-        return response()->json($message->load('user', 'files'));
+        return redirect()->back();
+    }
+
+    public function index(Chat $chat)
+    {
+        $messages = $chat->messages()->with('user', 'files')->orderBy('created_at')->get();
+        return response()->json($messages);
     }
 }

@@ -18,14 +18,11 @@ class ChatController extends Controller
         ]);
     }
 
-    // Конкретный чат
     public function show(Chat $chat)
     {
-        // $this->authorize('view', $chat); // если нужна политика
-        $messages = $chat->messages()->with('user', 'files')->get();
-        return Inertia::render('Chat', [ // <--- ВАЖНО! ДРУГОЙ КОМПОНЕНТ
+        return Inertia::render('Chat', [
             'chat' => $chat,
-            'messages' => $messages,
+            'messages' => $chat->messages()->with('user', 'files')->orderBy('created_at')->get(),
         ]);
     }
 }
