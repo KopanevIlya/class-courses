@@ -6,22 +6,59 @@
       </h2>
     </template>
     <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white p-4 rounded shadow">
-          <ul>
-            <li v-for="message in messages" :key="message.id">
-              <strong>{{ message.user.name }}:</strong> {{ message.body }}
-              <ul v-if="message.files && message.files.length">
-                <li v-for="file in message.files" :key="file.id">
-                  <a :href="`/storage/${file.path}`" target="_blank">{{ file.original_name }}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form @submit.prevent="sendMessage" enctype="multipart/form-data">
-            <input v-model="newMessage" class="border rounded px-2 py-1 mr-2" placeholder="Введите сообщение" />
-            <input type="file" multiple @change="handleFiles" />
-            <button class="bg-blue-500 text-white px-3 py-1 rounded" type="submit">Отправить</button>
+      <div class="max-w-2xl mx-auto px-2">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <!-- Список сообщений -->
+          <div ref="messagesEnd" class="space-y-4 mb-4 max-h-[400px] overflow-y-auto">
+            <div
+              v-for="message in messages"
+              :key="message.id"
+              :class="[
+                'flex',
+                message.user.email === $page.props.auth.user.email ? 'justify-end' : 'justify-start'
+              ]"
+            >
+              <div class="flex items-end space-x-2" :class="message.user.email === $page.props.auth.user.email ? 'flex-row-reverse space-x-reverse' : ''">
+                <!-- Аватарка -->
+                <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-800 text-sm">
+                  {{ message.user.name ? message.user.name.charAt(0).toUpperCase() : message.user.email.charAt(0).toUpperCase() }}
+                </div>
+                <!-- Сообщение -->
+                <div
+                  :class="[
+                    'px-4 py-2 rounded-lg min-w-[100px] max-w-[70vw] break-words',
+                    message.user.email === $page.props.auth.user.email
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-100 text-gray-800'
+                  ]"
+                >
+                  <div class="text-xs font-semibold mb-1 opacity-80">
+                    {{ message.user.email }}
+                  </div>
+                  <div>{{ message.body }}</div>
+                  <div v-if="message.files && message.files.length" class="mt-2 space-y-1">
+                    <div v-for="file in message.files" :key="file.id">
+                      <a
+                        :href="`/storage/${file.path}`"
+                        target="_blank"
+                        class="text-xs text-blue-200 hover:underline flex items-center"
+                      >
+                        <svg class="w-4 h-4 mr-1 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.656-5.656l-6.586 6.586"/>
+                        </svg>
+                        {{ file.original_name }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Форма отправки -->
+          <form @submit.prevent="sendMessage" class="flex flex-col sm:flex-row gap-2 items-stretch">
+            <input v-model="newMessage" class="flex-1 border rounded px-3 py-2" placeholder="Введите сообщение" />
+            <input type="file" multiple @change="handleFiles" class="block border rounded px-2 py-1" />
+            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" type="submit">Отправить</button>
           </form>
         </div>
       </div>
@@ -30,7 +67,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { router } from '@inertiajs/vue3';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
@@ -43,6 +80,7 @@ const messages = ref(props.messages);
 const newMessage = ref('');
 const files = ref([]);
 let pollingInterval = null;
+const messagesEnd = ref(null);
 
 function handleFiles(event) {
   files.value = Array.from(event.target.files);
@@ -53,10 +91,12 @@ function fetchMessages() {
     .then(res => res.json())
     .then(data => {
       messages.value = data;
+      scrollToBottom();
     });
 }
 
 function sendMessage() {
+  if (!newMessage.value && files.value.length === 0) return;
   const formData = new FormData();
   formData.append('body', newMessage.value);
   files.value.forEach(file => formData.append('files[]', file));
@@ -72,8 +112,17 @@ function sendMessage() {
   });
 }
 
+function scrollToBottom() {
+  nextTick(() => {
+    if (messagesEnd.value) {
+      messagesEnd.value.scrollTop = messagesEnd.value.scrollHeight;
+    }
+  });
+}
+
 onMounted(() => {
-  pollingInterval = setInterval(fetchMessages, 3000); // каждые 3 сек
+  pollingInterval = setInterval(fetchMessages, 3000); // обновлять каждые 3 сек
+  scrollToBottom();
 });
 
 onUnmounted(() => {
