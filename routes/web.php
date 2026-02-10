@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/chats', [ChatController::class, 'index']);
-    Route::get('/chats/{chat}', [ChatController::class, 'show']);
+    Route::get('/chats', [ChatController::class, 'index']); // список чатов
+    Route::get('/chats/{chat}', [ChatController::class, 'show']); // конкретный чат
     Route::post('/chats/{chat}/messages', [MessageController::class, 'store']);
 });
 
