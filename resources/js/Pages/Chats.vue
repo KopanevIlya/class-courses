@@ -1,4 +1,5 @@
 <template>
+   <AuthenticatedLayout>
   <div>
     <h1>Мои чаты</h1>
     <ul>
@@ -8,9 +9,12 @@
       </li>
     </ul>
   </div>
+</AuthenticatedLayout>
 </template>
 
 <script setup>
+
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 const props = defineProps({
   chats: Array
   
