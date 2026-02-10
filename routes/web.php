@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/chats/{chat}', [ChatController::class, 'show']);
     Route::post('/chats/{chat}/messages', [MessageController::class, 'store']);
     Route::get('/chats/{chat}/messages', [MessageController::class, 'index']); // polling route
+    Route::get('/storage/chat_files/{filename}', [App\Http\Controllers\FileDownloadController::class, 'show']);
 });
 
 require __DIR__.'/auth.php';
