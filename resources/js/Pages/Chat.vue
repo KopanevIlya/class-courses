@@ -55,34 +55,42 @@
             </div>
           </div>
           <!-- Форма отправки -->
-          <form @submit.prevent="sendMessage" class="flex items-center gap-2 mt-2">
-            <input
-              v-model="newMessage"
-              class="flex-1 border rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:border-blue-400 transition h-12"
-              placeholder="Введите сообщение"
-            />
-            <label class="inline-flex items-center border rounded px-3 py-2 bg-white cursor-pointer hover:bg-gray-100 transition h-12">
-              <input
-                type="file"
-                multiple
-                @change="handleFiles"
-                class="hidden"
-              />
-              <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.656-5.656l-6.586 6.586"/>
-              </svg>
-              <span>Выбрать файлы</span>
-            </label>
-            <span class="text-gray-500 text-sm truncate max-w-[140px] h-12 flex items-center">
-              {{ files && files.length ? files.map(f => f.name).join(', ') : 'Файл не выбран' }}
-            </span>
-            <button
-              class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition h-12"
-              type="submit"
-            >
-              Отправить
-            </button>
-          </form>
+          <form
+  @submit.prevent="sendMessage"
+  class="flex flex-col sm:flex-row items-stretch gap-2 mt-2"
+>
+  <input
+    v-model="newMessage"
+    class="flex-1 border rounded px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:border-blue-400 transition h-12"
+    placeholder="Введите сообщение"
+  />
+  <label
+    class="flex items-center justify-center border rounded bg-white cursor-pointer hover:bg-gray-100 transition h-12 w-12 min-w-[3rem]"
+    title="Прикрепить файл"
+  >
+    <input
+      type="file"
+      multiple
+      @change="handleFiles"
+      class="hidden"
+    />
+    <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.586-6.586a4 4 0 10-5.656-5.656l-6.586 6.586"/>
+    </svg>
+  </label>
+  <button
+    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition h-12 w-full sm:w-auto"
+    type="submit"
+  >
+    Отправить
+  </button>
+</form>
+<span v-if="files && files.length"
+  class="block text-gray-500 text-xs mt-1 truncate max-w-full"
+>
+  {{ files.map(f => f.name).join(', ') }}
+</span>
+       
         </div>
       </div>
     </div>
