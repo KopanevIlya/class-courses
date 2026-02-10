@@ -15,4 +15,5 @@ const props = defineProps({
   
 })
 console.log(props.chats)
+
 </script>

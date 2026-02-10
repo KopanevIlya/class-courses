@@ -1,1 +1,0 @@
-import{g as t,d as r,F as l,m as o,o as s,t as u}from"./app-DXiXWuMR.js";const i=["href"],c={__name:"Chats",props:{chats:Array},setup(n){return(d,a)=>(s(),t("div",null,[a[0]||(a[0]=r("h1",null,"Мои чаты",-1)),r("ul",null,[(s(!0),t(l,null,o(n.chats,e=>(s(),t("li",{key:e.id},[r("a",{href:`/chats/${e.id}`},u(e.name),9,i)]))),128))])]))}};export{c as default};
