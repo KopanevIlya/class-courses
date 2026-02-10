@@ -12,5 +12,7 @@
 <script setup>
 const props = defineProps({
   chats: Array
+  
 })
+console.log(props.chats)
 </script>
