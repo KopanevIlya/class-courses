@@ -4,6 +4,7 @@
     <ul>
       <li v-for="chat in chats" :key="chat.id">
         <a :href="`/chats/${chat.id}`">{{ chat.name }}</a>
+
       </li>
     </ul>
   </div>
