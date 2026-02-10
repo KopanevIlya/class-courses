@@ -19,20 +19,19 @@ class MessageController extends Controller
             'body' => $request->body,
         ]);
 
-        if ($request->hasFile('files')) {
-            foreach ($request->file('files') as $file) {
-                $path = $file->store('chat_files');
-                $message->files()->create([
-                    'path' => $path,
-                    'original_name' => $file->getClientOriginalName(),
-                ]);
-            }
+        // Сохраняем файлы
+    if ($request->hasFile('files')) {
+        foreach ($request->file('files') as $file) {
+            $path = $file->store('chat_files', 'public'); // ВАЖНО: 'public'
+            \Log::info('File uploaded', ['path' => $path]); // логируем для проверки
+            $message->files()->create([
+                'path' => $path,
+                'original_name' => $file->getClientOriginalName(),
+            ]);
         }
+    }
 
-        // Можно убрать broadcast если не используешь websockets
-        // broadcast(new \App\Events\NewMessage($message))->toOthers();
-
-        return redirect()->back();
+    return redirect()->back();
     }
 
     public function index(Chat $chat)
