@@ -1,17 +1,20 @@
 <template>
-    <div>
-      <h2>{{ chat.name }}</h2>
-      <div v-for="message in messages" :key="message.id">
-        <strong>{{ message.user.name }}</strong>: {{ message.body }}
-        <div v-for="file in message.files" :key="file.id">
-          <a :href="`/storage/${file.path}`" target="_blank">{{ file.original_name }}</a>
-        </div>
+  <AuthenticatedLayout>
+    <template #header>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        Чат: {{ chat.name }}
+      </h2>
+    </template>
+    <div class="py-12">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <!-- Сообщения -->
       </div>
-      <!-- Форма отправки сообщения и т.д. -->
     </div>
-  </template>
+  </AuthenticatedLayout>
+</template>
   
   <script setup>
+  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
   const props = defineProps({
     chat: Object,
     messages: Array
