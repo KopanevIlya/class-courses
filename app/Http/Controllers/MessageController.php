@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Chat; // <-- ВАЖНО!
 
-// app/Http/Controllers/MessageController.php
 class MessageController extends Controller
 {
     public function store(Request $request, Chat $chat)
