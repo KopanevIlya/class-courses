@@ -152,7 +152,7 @@ function scrollToBottom() {
 }
 
 onMounted(() => {
-  pollingInterval = setInterval(fetchMessages, 3000); // обновлять каждые 3 сек
+  pollingInterval = setInterval(fetchMessages, 5000); // обновлять каждые 5 сек
   scrollToBottom();
 });
 
