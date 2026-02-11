@@ -3,20 +3,18 @@ import { Head, Link } from '@inertiajs/vue3';
 
 defineProps({
     canLogin: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
 });
 </script>
 
 <template>
-  <Head title="CLASS – Фуллстек курс от преподавателя EasyUM" />
+  <Head title="CLASS – Фуллстек курс от Копанева Ильи" />
 
   <div class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden relative">
     <!-- Header -->
     <header class="py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-fade-down">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="w-8 h-8" alt="CLASS" />
-        CLASS – Фуллстек курс
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg" class="w-8 h-8" alt="CLASS" />
+        CLASS – Фуллстек курс 2026
       </div>
       <div>
         <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-fade-down animate-delay-200">Войти</Link>
@@ -27,28 +25,26 @@ defineProps({
     <section class="flex flex-col md:flex-row items-center justify-center px-4 py-16 gap-10 max-w-7xl mx-auto w-full animate-fade-up">
       <div class="max-w-xl">
         <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6 leading-tight">
-          CLASS — <span class="text-blue-600">Фуллстек обучение</span> с практикой
+          CLASS — <span class="text-blue-600">Курс фуллстек-разработки</span> нового поколения
         </h1>
         <p class="text-blue-800 text-lg md:text-xl mb-8 font-medium">
-          Овладейте современным фронтендом и бэкендом за 3 месяца.<br>
-          Всё от HTML до Laravel и Vue — с живыми примерами и реальными проектами.
+          Откройте для себя мир IT и станьте востребованным специалистом.<br>
+          Освойте все этапы создания современных веб-приложений: от идеи до запуска!
         </p>
         <div class="flex items-center gap-4 text-blue-700 mb-4">
           <span class="font-semibold">👨‍🏫 Преподаватель:</span>
-          <span class="font-bold text-blue-900">EasyUM (опыт 10+ лет)</span>
+          <span class="font-bold text-blue-900">Копанев Илья</span>
         </div>
         <div class="flex flex-wrap gap-3 text-blue-500 font-semibold mb-3">
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">HTML</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">CSS</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">JS</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Vue</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Laravel</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">PHP</span>
-          <span class="bg-blue-100 rounded px-3 py-1 text-sm">MySQL</span>
+          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Фронтенд</span>
+          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Бэкенд</span>
+          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Чаты поддержки</span>
+          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Практика</span>
+          <span class="bg-blue-100 rounded px-3 py-1 text-sm">Общение</span>
         </div>
       </div>
       <div class="flex justify-center animate-float">
-        <img src="https://it.easyum.ru/assets/img/hero-img.png"
+        <img src="https://images.unsplash.com/photo-1519389950473-47c0e3769b2a?auto=format&fit=crop&w=400&q=80"
              alt="CLASS Fullstack"
              class="w-64 md:w-80 rounded-2xl shadow-xl border-4 border-blue-200" />
       </div>
@@ -56,13 +52,16 @@ defineProps({
 
     <!-- About Course -->
     <section class="max-w-5xl mx-auto px-4 py-8 bg-white rounded-2xl shadow-lg mt-8 animate-fade-up animate-delay-300">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Что вы получите?</h2>
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Почему CLASS?</h2>
       <ul class="list-disc pl-5 text-blue-700 text-lg space-y-2">
-        <li>Понимание основ и продвинутых тем фронта и бэка</li>
-        <li>Практика на реальных проектах</li>
-        <li>Доступ к видеоурокам и интерактивным заданиям</li>
-        <li>Обратная связь и личные консультации от преподавателя</li>
-        <li>Готовое портфолио и помощь с трудоустройством</li>
+        <li>Курс создан для тех, кто хочет изменить свою жизнь и построить карьеру в IT</li>
+        <li>Фуллстек: освоите и фронтенд, и бэкенд, и сможете работать над любыми проектами</li>
+        <li>Практика с реальными заданиями и кейсами, а не просто теория</li>
+        <li>Внутренние чаты для поддержки, общения и обмена опытом</li>
+        <li>Личное сопровождение от преподавателя на каждом этапе обучения</li>
+        <li>Портфолио, которое выделит вас среди других кандидатов</li>
+        <li>Возможность работать удалённо или в офисе, в любой стране</li>
+        <li>Вы получите уверенность, знания и навыки, которые ценятся работодателями</li>
       </ul>
     </section>
 
@@ -73,72 +72,89 @@ defineProps({
         <div class="bg-blue-100 rounded-xl p-6 shadow flex flex-col gap-2">
           <h3 class="text-blue-700 font-semibold mb-2">Фронтенд</h3>
           <ul class="list-disc pl-5 text-blue-800">
-            <li>HTML5, CSS3, адаптив</li>
-            <li>JavaScript ES6+, SPA</li>
-            <li>Vue.js (компоненты, state, роутинг)</li>
-            <li>Интеграция с API</li>
-            <li>UI/UX основы</li>
+            <li>Основы веба: верстка, стилизация, адаптивность</li>
+            <li>JavaScript: логика, интерактивность, динамика</li>
+            <li>Современные фреймворки: компоненты, SPA</li>
+            <li>Работа с API, интеграция с сервером</li>
+            <li>UI/UX: как делать удобно и красиво</li>
           </ul>
         </div>
         <div class="bg-blue-100 rounded-xl p-6 shadow flex flex-col gap-2">
           <h3 class="text-blue-700 font-semibold mb-2">Бэкенд</h3>
           <ul class="list-disc pl-5 text-blue-800">
-            <li>PHP основы и ООП</li>
-            <li>Laravel (MVC, миграции, REST API)</li>
-            <li>MySQL (базы данных)</li>
-            <li>JWT/Passport авторизация</li>
-            <li>DevOps: деплой на сервер</li>
+            <li>Основы серверной разработки</li>
+            <li>Работа с базами данных</li>
+            <li>Создание REST API</li>
+            <li>Авторизация и безопасность</li>
+            <li>Деплой и поддержка проектов</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- About Teacher -->
+    <!-- Advertising / Motivation Block -->
     <section class="max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-500">
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Что вы сможете после курса?</h2>
+      <div class="space-y-4 text-blue-700 text-lg">
+        <div>✔️ Создавать современные сайты и приложения с нуля</div>
+        <div>✔️ Понимать, как работает интернет изнутри</div>
+        <div>✔️ Работать на себя или устроиться в IT-компанию</div>
+        <div>✔️ Получать достойную оплату за свои знания</div>
+        <div>✔️ Самостоятельно решать сложные задачи и развиваться дальше</div>
+        <div>✔️ Общаться с единомышленниками в чатах поддержки</div>
+        <div>✔️ Быть уверенным в своих силах и знаниях</div>
+        <div>✔️ Начать новую жизнь в сфере, которая развивается и будет востребована ещё много лет</div>
+      </div>
+    </section>
+
+    <!-- About Teacher -->
+    <section class="max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-600">
       <h2 class="text-2xl font-bold text-blue-800 mb-4">О преподавателе</h2>
       <div class="flex flex-col md:flex-row items-center gap-8">
-        <img src="https://it.easyum.ru/assets/img/avatar.png"
-             alt="EasyUM"
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80"
+             alt="Копанев Илья"
              class="w-32 h-32 rounded-full shadow border-2 border-blue-300 animate-fade-right" />
         <div>
-          <p class="text-blue-700 text-lg mb-2 font-semibold">EasyUM — опыт 10+ лет в веб-разработке</p>
+          <p class="text-blue-700 text-lg mb-2 font-semibold">Копанев Илья — ваш личный наставник</p>
           <p class="text-blue-800 text-base">
-            Работал в крупных IT-компаниях, веду проекты на Laravel, Vue, React и Node.  
-            <br>Автор обучающих курсов и ментор студентов.  
-            <br>Делаю обучение максимально практичным и понятным!
+            Более 10 лет в веб-разработке, сотни реализованных проектов, десятки обученных студентов.<br>
+            Я лично отвечаю на ваши вопросы, поддерживаю и помогаю разобраться даже в самых сложных темах.<br>
+            CLASS — это не просто курс, это путь к новой профессии и уверенности в себе!
           </p>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="max-w-5xl mx-auto px-4 py-8 mt-10 animate-fade-up animate-delay-600">
+    <section class="max-w-5xl mx-auto px-4 py-8 mt-10 animate-fade-up animate-delay-700">
       <h2 class="text-2xl font-bold text-blue-800 mb-4">Вопросы и ответы</h2>
       <div class="space-y-4">
         <div class="bg-blue-50 rounded-xl p-4 shadow">
-          <h3 class="font-semibold text-blue-700 mb-1">Для кого этот курс?</h3>
-          <p class="text-blue-800">Для начинающих и тех, кто хочет освоить фуллстек и работать в IT.</p>
+          <h3 class="font-semibold text-blue-700 mb-1">Нужны ли специальные знания?</h3>
+          <p class="text-blue-800">Нет! Всё объясняется с нуля. Главное — желание учиться и развиваться.</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-4 shadow">
+          <h3 class="font-semibold text-blue-700 mb-1">Как проходит обучение?</h3>
+          <p class="text-blue-800">Видеоуроки, практические задания, внутренние чаты для общения и поддержки.</p>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-4 shadow">
+          <h3 class="font-semibold text-blue-700 mb-1">Что если возникнут вопросы?</h3>
+          <p class="text-blue-800">Всегда можно обратиться ко мне напрямую или в чат поддержки.</p>
         </div>
         <div class="bg-blue-50 rounded-xl p-4 shadow">
           <h3 class="font-semibold text-blue-700 mb-1">Какие проекты будем делать?</h3>
-          <p class="text-blue-800">Сайт портфолио, интернет-магазин, REST API, SPA-приложения.</p>
-        </div>
-        <div class="bg-blue-50 rounded-xl p-4 shadow">
-          <h3 class="font-semibold text-blue-700 mb-1">Есть ли поддержка?</h3>
-          <p class="text-blue-800">Да, личные консультации и чат для вопросов.</p>
+          <p class="text-blue-800">Портфолио, интернет-магазин, чат, REST API, и многое другое.</p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="mt-auto py-6 px-4 bg-blue-600 text-white text-center animate-fade-up animate-delay-700">
+    <footer class="mt-auto py-6 px-4 bg-blue-600 text-white text-center animate-fade-up animate-delay-800">
       <div>
-        Laravel {{ laravelVersion }} | PHP {{ phpVersion }} &nbsp; | &nbsp; CLASS © 2024
+        CLASS © 2026 | Копанев Илья
       </div>
       <div class="mt-2">
-        <a href="https://it.easyum.ru/" target="_blank" class="underline hover:text-blue-200">Наш сайт</a>
-        &nbsp;|&nbsp;
-        <a href="mailto:info@easyum.ru" class="underline hover:text-blue-200">Контакты</a>
+        <span>Внутренние чаты поддержки и общения доступны после входа</span>
       </div>
     </footer>
   </div>
@@ -171,4 +187,5 @@ defineProps({
 .animate-delay-500 { animation-delay: .5s;}
 .animate-delay-600 { animation-delay: .6s;}
 .animate-delay-700 { animation-delay: .7s;}
+.animate-delay-800 { animation-delay: .8s;}
 </style>
