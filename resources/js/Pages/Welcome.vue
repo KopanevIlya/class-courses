@@ -25,7 +25,7 @@ defineProps({
     <header class="relative z-10 py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg" class="w-8 h-8" alt="CLASS" />
-        CLASS – Фуллстек курс 2026
+        CLASS
       </div>
       <div>
         <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
@@ -36,7 +36,7 @@ defineProps({
     <section class="relative z-10 flex flex-col md:flex-row items-center justify-center px-4 py-16 gap-10 max-w-7xl mx-auto w-full animate-fade-up">
       <div class="max-w-xl">
         <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6 leading-tight animate-slide-right">
-          CLASS — <span class="text-blue-600">Курс фуллстек-разработки</span> нового поколения
+          CLASS — <span class="text-blue-600">курс фуллстек-разработки</span> нового поколения
         </h1>
         <p class="text-blue-800 text-lg md:text-xl mb-8 font-medium animate-fade-up animate-delay-200">
           Стань тем, кто создает будущее!<br>
@@ -193,7 +193,7 @@ defineProps({
     <!-- Footer -->
     <footer class="relative z-10 mt-auto py-6 px-4 bg-blue-600 text-white text-center animate-fade-up animate-delay-1600">
       <div>
-        CLASS © 2026 | Копанев Илья
+        CLASS © 2026 
       </div>
       <div class="mt-2">
         <span>Внутренние чаты поддержки и общения доступны после входа</span>
