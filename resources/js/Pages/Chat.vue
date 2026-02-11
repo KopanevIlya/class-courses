@@ -101,6 +101,17 @@
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { router } from '@inertiajs/vue3';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import Echo from 'laravel-echo';
+import Pusher from 'pusher-js';
+
+window.Pusher = Pusher;
+
+window.Echo = new Echo({
+  broadcaster: 'pusher',
+  key: import.meta.env.VITE_PUSHER_APP_KEY,
+  cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+  forceTLS: true,
+});
 
 const props = defineProps({
   chat: Object,
@@ -110,20 +121,10 @@ const props = defineProps({
 const messages = ref(props.messages);
 const newMessage = ref('');
 const files = ref([]);
-let pollingInterval = null;
 const messagesEnd = ref(null);
 
 function handleFiles(event) {
   files.value = Array.from(event.target.files);
-}
-
-function fetchMessages() {
-  fetch(`/chats/${props.chat.id}/messages`)
-    .then(res => res.json())
-    .then(data => {
-      messages.value = data;
-      scrollToBottom();
-    });
 }
 
 function sendMessage() {
@@ -138,7 +139,6 @@ function sendMessage() {
     onSuccess: () => {
       newMessage.value = '';
       files.value = [];
-      fetchMessages();
     }
   });
 }
@@ -151,13 +151,21 @@ function scrollToBottom() {
   });
 }
 
+let echoChannel = null;
+
 onMounted(() => {
-  pollingInterval = setInterval(fetchMessages, 5000); // обновлять каждые 5 сек
+  echoChannel = window.Echo.private('chat.' + props.chat.id)
+    .listen('NewMessage', (e) => {
+      messages.value.push(e.message);
+      scrollToBottom();
+    });
   scrollToBottom();
 });
 
 onUnmounted(() => {
-  clearInterval(pollingInterval);
+  if (echoChannel) {
+    window.Echo.leave('chat.' + props.chat.id);
+  }
 });
 
 </script>

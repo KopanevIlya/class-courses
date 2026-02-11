@@ -1,29 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Events\NewMessage;
 use Illuminate\Http\Request;
 use App\Models\Chat;
 
 class MessageController extends Controller
 {
     public function store(Request $request, Chat $chat)
-    {
-        $request->validate([
-            'body' => 'required|string',
-            'files.*' => 'file|max:10240',
-        ]);
+{
+    $request->validate([
+        'body' => 'required|string',
+        'files.*' => 'file|max:10240',
+    ]);
 
-        $message = $chat->messages()->create([
-            'user_id' => auth()->id(),
-            'body' => $request->body,
-        ]);
+    $message = $chat->messages()->create([
+        'user_id' => auth()->id(),
+        'body' => $request->body,
+    ]);
 
-        // Сохраняем файлы
+    // Сохраняем файлы
     if ($request->hasFile('files')) {
         foreach ($request->file('files') as $file) {
-            $path = $file->store('chat_files', 'public'); // ВАЖНО: 'public'
-            \Log::info('File uploaded', ['path' => $path]); // логируем для проверки
+            $path = $file->store('chat_files', 'public');
             $message->files()->create([
                 'path' => $path,
                 'original_name' => $file->getClientOriginalName(),
@@ -31,8 +30,15 @@ class MessageController extends Controller
         }
     }
 
-    return redirect()->back();
-    }
+    // Обновим модель с файлами и пользователем для события
+    $message->load('user', 'files');
+
+    // Вещаем событие
+    broadcast(new \App\Events\NewMessage($message))->toOthers();
+
+    // Вернём сообщение в ответе (фронт может использовать)
+    return response()->json($message);
+}
 
     public function index(Chat $chat)
     {
