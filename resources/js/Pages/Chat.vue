@@ -99,13 +99,12 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { router } from '@inertiajs/vue3';
+import { router, usePage } from '@inertiajs/vue3'; // добавлен usePage
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 
 window.Pusher = Pusher;
-console.log('KEY:', import.meta.env.VITE_PUSHER_APP_KEY, 'CLUSTER:', import.meta.env.VITE_PUSHER_APP_CLUSTER);
 window.Echo = new Echo({
   broadcaster: 'pusher',
   key: import.meta.env.VITE_PUSHER_APP_KEY,
@@ -122,6 +121,8 @@ const messages = ref(props.messages);
 const newMessage = ref('');
 const files = ref([]);
 const messagesEnd = ref(null);
+const page = usePage();
+const currentUser = page.props.auth.user;
 
 function handleFiles(event) {
   files.value = Array.from(event.target.files);
@@ -137,8 +138,19 @@ function sendMessage() {
     preserveScroll: true,
     forceFormData: true,
     onSuccess: () => {
+      // Добавляем сообщение локально
+      const myMessage = {
+        id: 'local-' + Date.now(),
+        body: newMessage.value,
+        user: currentUser,
+        files: [],
+        created_at: new Date().toISOString(),
+      };
+      messages.value.push(myMessage);
+
       newMessage.value = '';
       files.value = [];
+      scrollToBottom();
     }
   });
 }
