@@ -24,7 +24,7 @@ defineProps({
     <!-- Header -->
     <header class="relative z-10 py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
-        <img src="../Pages/img/Class.png" class="w-8 h-8" alt="CLASS" />
+        <img src="../../../public/img/Class.png" class="w-8 h-8" alt="CLASS" />
         CLASS
       </div>
       <div>
