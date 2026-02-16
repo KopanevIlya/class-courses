@@ -24,7 +24,7 @@ defineProps({
     <!-- Header -->
     <header class="relative z-10 py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
-        <img src="../../../public/img/Class.png" style="height: 30px;" alt="CLASS" />
+        <img src="../../../public/img/logo.png" style="height: 30px;" alt="CLASS" />
       </div>
       <div>
         <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
