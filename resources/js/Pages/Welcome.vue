@@ -24,8 +24,7 @@ defineProps({
     <!-- Header -->
     <header class="relative z-10 py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
-        <img src="../../../public/img/Class.png" class="w-8 h-8" alt="CLASS" />
-        CLASS
+        <img src="../../../public/img/Class.png" class="w-11 h-11" alt="CLASS" />
       </div>
       <div>
         <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
@@ -58,7 +57,7 @@ defineProps({
         </div>
       </div>
       <div class="flex justify-center animate-float animate-delay-300">
-        <img src="https://images.unsplash.com/photo-1519389950473-47c0e3769b2a?auto=format&fit=crop&w=400&q=80"
+        <img src="../../../public/img/Class.png"
              alt="CLASS Fullstack"
              class="w-64 md:w-80 rounded-2xl shadow-xl border-4 border-blue-200" />
       </div>
