@@ -152,7 +152,7 @@ defineProps({
     <section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-1000">
       <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-right">О преподавателе</h2>
       <div class="flex flex-col md:flex-row items-center gap-8">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80"
+        <img src="../../../public/img/DSC-206.JPG"
              alt="Копанев Илья"
              class="w-32 h-32 rounded-full shadow border-2 border-blue-300 animate-fade-right" />
         <div>
