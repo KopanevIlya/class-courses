@@ -1,0 +1,1 @@
+import{_ as o}from"./logo-BamWZNjX.js";import{_ as r}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,g as c}from"./app-CXORzm1r.js";const e={},s={src:o,alt:"CLASS"};function _(n,a){return t(),c("img",s)}const f=r(e,[["render",_]]);export{f as A};
