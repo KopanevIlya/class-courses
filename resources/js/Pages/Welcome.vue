@@ -26,6 +26,15 @@ defineProps({
       <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
         <img src="../../../public/img/logo.png" style="height: 70px;" alt="CLASS" />
       </div>
+      <div class="flex items-center gap-4">
+  <a href="https://t.me/@Kopanev_Ilya" target="_blank" rel="noopener" title="Телеграм">
+    <!-- Telegram SVG -->
+  </a>
+  <a href="tel:+79023151613" title="Позвонить Максу">
+    <!-- Phone SVG -->
+  </a>
+  <Link v-if="canLogin" href="/login" class="...">Войти</Link>
+</div>
       <div>
         <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
       </div>
