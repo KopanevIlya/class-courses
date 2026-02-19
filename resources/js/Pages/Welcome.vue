@@ -131,17 +131,17 @@ defineProps({
       <h2 class="text-2xl font-bold text-blue-800 mb-6 animate-slide-left">Отзывы студентов</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div class="bg-blue-50 rounded-2xl shadow p-6 flex flex-col items-center animate-fade-up animate-delay-1100">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review1" />
+          <img src="../../../public/img/_65a970b733cf2.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review1" />
           <div class="text-blue-700 font-bold mb-2">Алексей, 27 лет</div>
           <div class="text-blue-800 text-base text-center">"CLASS изменил мою жизнь. Теперь я работаю в IT и могу реализовать свои идеи!"</div>
         </div>
         <div class="bg-blue-50 rounded-2xl shadow p-6 flex flex-col items-center animate-fade-up animate-delay-1200">
-          <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review2" />
+          <img src="../../../public/img/_6645e13e1e998.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review2" />
           <div class="text-blue-700 font-bold mb-2">Марина, 34 года</div>
           <div class="text-blue-800 text-base text-center">"Очень крутая атмосфера и поддержка! Даже сложные темы стали понятными."</div>
         </div>
         <div class="bg-blue-50 rounded-2xl shadow p-6 flex flex-col items-center animate-fade-up animate-delay-1300">
-          <img src="https://randomuser.me/api/portraits/men/65.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review3" />
+          <img src="../../../public/img/_6480216064b84.jpg" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review3" />
           <div class="text-blue-700 font-bold mb-2">Дмитрий, 22 года</div>
           <div class="text-blue-800 text-base text-center">"После CLASS я смог сделать свой первый проект и устроиться на работу!"</div>
         </div>
