@@ -45,6 +45,12 @@ const showingNavigationDropdown = ref(false);
                                  >
                                      Мои чаты
                                  </NavLink>
+                                 <NavLink
+                                        :href="'/videos'"
+                                         :active="$page.url.startsWith('/videos')"
+                                 >
+                                     Видео
+                                 </NavLink>
                             </div>
                         </div>
 
@@ -155,6 +161,12 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink
         :href="'/chats'"
         :active="$page.url.startsWith('/chats')"
+    >
+        Мои чаты
+    </ResponsiveNavLink>
+    <ResponsiveNavLink
+        :href="'/videos'"
+        :active="$page.url.startsWith('/videos')"
     >
         Мои чаты
     </ResponsiveNavLink>
