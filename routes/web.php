@@ -34,4 +34,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/storage/chat_files/{filename}', [App\Http\Controllers\FileDownloadController::class, 'show']);
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos');
+});
+
 require __DIR__.'/auth.php';
