@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name',) }}</title>
+        <title inertia>CLASS courses</title>
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="favicon.png">
