@@ -23,22 +23,26 @@ defineProps({
 
     <!-- Header -->
     <header class="relative z-10 py-6 px-4 flex justify-between items-center max-w-7xl mx-auto w-full">
-      <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
-        <img src="../../../public/img/logo.png" style="height: 70px;" alt="CLASS" />
-      </div>
-      <div class="flex items-center gap-4">
-  <a href="https://t.me/@Kopanev_Ilya" target="_blank" rel="noopener" title="Телеграм">
-    <!-- Telegram SVG -->
-  </a>
-  <a href="tel:+79023151613" title="Позвонить Максу">
-    <!-- Phone SVG -->
-  </a>
-  <Link v-if="canLogin" href="/login" class="...">Войти</Link>
-</div>
-      <div>
-        <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
-      </div>
-    </header>
+  <div class="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide flex items-center gap-2 animate-slide-down">
+    <img src="../../../public/img/logo.png" style="height: 70px;" alt="CLASS" />
+  </div>
+  <div class="flex items-center gap-4">
+    <!-- Ссылка на Телеграм -->
+    <a href="https://t.me/your_telegram_username" target="_blank" rel="noopener" title="Телеграм">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#229ED9" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.993 16.753l-.396 5.59c.57 0 .817-.246 1.116-.542l2.676-2.563 5.552 4.06c1.016.562 1.74.267 2.013-.942l3.652-17.13c.342-1.562-.565-2.175-1.572-1.797l-21.06 8.11c-1.437.553-1.417 1.345-.26 1.71l5.392 1.684 12.507-7.89c.59-.354 1.13-.158.687.196l-10.13 8.24z"/>
+      </svg>
+    </a>
+    <!-- Ссылка на звонок Максу -->
+    <a href="tel:+79023151613" title="Позвонить Максу">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#10B981" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.59.57a1 1 0 011 1v3.5a1 1 0 01-1 1C8.39 22 2 15.61 2 7.5A1 1 0 013 6.5h3.5a1 1 0 011 1c0 1.26.2 2.47.57 3.59a1.003 1.003 0 01-.24 1.01l-2.2 2.2z"/>
+      </svg>
+    </a>
+    <!-- Кнопка Войти -->
+    <Link v-if="canLogin" href="/login" class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition animate-slide-down animate-delay-100">Войти</Link>
+  </div>
+</header>
 
     <!-- Hero Section -->
     <section class="relative z-10 flex flex-col md:flex-row items-center justify-center px-4 py-16 gap-10 max-w-7xl mx-auto w-full animate-fade-up">
