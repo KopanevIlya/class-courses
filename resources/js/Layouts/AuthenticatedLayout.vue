@@ -168,7 +168,7 @@ const showingNavigationDropdown = ref(false);
         :href="'/videos'"
         :active="$page.url.startsWith('/videos')"
     >
-        Мои чаты
+        Видео
     </ResponsiveNavLink>
                     </div>
 
