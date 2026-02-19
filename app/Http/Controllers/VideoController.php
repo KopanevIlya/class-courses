@@ -9,7 +9,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-        $videos = Video::orderBy('created_at', 'desc')->get();
+        $videos = auth()->user()->videos()->orderBy('created_at', 'desc')->get();
         return Inertia::render('Videos', [
             'videos' => $videos
         ]);
