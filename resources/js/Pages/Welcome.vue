@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <Head title="CLASS – Фуллстек курс от Копанева Ильи" />
+  <Head title="CLASS courses" />
 
   <div class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-hidden relative">
     <!-- Animated Background -->
