@@ -51,4 +51,9 @@ public function chats()
 {
     return $this->belongsToMany(Chat::class);
 }
+
+public function videos()
+{
+    return $this->belongsToMany(Video::class);
+}
 }
