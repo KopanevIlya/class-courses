@@ -142,7 +142,7 @@ defineProps({
         </div>
         <div class="bg-blue-50 rounded-2xl shadow p-6 flex flex-col items-center animate-fade-up animate-delay-1300">
           <img src="../../../public/img/333555.webp" class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200" alt="review3" />
-          <div class="text-blue-700 font-bold mb-2">Дмитрий, 22 года</div>
+          <div class="text-blue-700 font-bold mb-2">Дмитрий, 26 лет</div>
           <div class="text-blue-800 text-base text-center">"После CLASS я смог сделать свой первый проект и устроиться на работу!"</div>
         </div>
       </div>
