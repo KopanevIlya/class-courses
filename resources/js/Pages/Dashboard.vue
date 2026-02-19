@@ -18,22 +18,19 @@ import { Head } from '@inertiajs/vue3';
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <div class="mb-8">
-                            <h3 class="text-2xl font-bold text-blue-700 mb-2">Добро пожаловать!</h3>
-                            <p>
-                                Основная коммуникация с вами теперь будет происходить в специальных <b>чатах</b> для слушателей курса.
-                                Здесь вы сможете получить поддержку, задать вопросы, общаться с преподавателями и другими участниками.
-                            </p>
-                            <div class="mt-4">
-                                <a
-                                    href="https://t.me/your_chat_link"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 transition"
-                                >
-                                    Перейти в чаты
-                                </a>
-                            </div>
-                        </div>
+    <h3 class="text-2xl font-bold text-blue-700 mb-2">Добро пожаловать!</h3>
+    <p>
+        Основная коммуникация теперь будет происходить в разделе <b>Чаты</b> — там вы сможете задать вопросы, получить поддержку и общаться с преподавателем и другими участниками.
+    </p>
+    <div class="mt-4">
+        <a
+            href="/chats"
+            class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 transition"
+        >
+            Перейти в чаты
+        </a>
+    </div>
+</div>
                         <div>
                             <h3 class="text-xl font-semibold text-blue-800 mb-3">Часто задаваемые вопросы</h3>
                             <ul class="list-disc pl-5 space-y-2 text-gray-800">
