@@ -152,14 +152,14 @@ onUnmounted(() => {
     <div class="flex-1 flex flex-col items-center">
       <div class="text-blue-700 text-lg mb-2 font-semibold">До конца акции осталось:</div>
       <div class="flex gap-2 text-2xl font-bold text-blue-900 bg-blue-100 rounded-xl px-6 py-3">
-        <span>{{ timer.days }}д</span>
-        <span>:</span>
-        <span>{{ timer.hours }}ч</span>
-        <span>:</span>
-        <span>{{ timer.minutes }}м</span>
-        <span>:</span>
-        <span>{{ timer.seconds }}с</span>
-      </div>
+  <span class="w-16 text-center font-mono">{{ timer.days }}д</span>
+  <span>:</span>
+  <span class="w-12 text-center font-mono">{{ timer.hours }}ч</span>
+  <span>:</span>
+  <span class="w-12 text-center font-mono">{{ timer.minutes }}м</span>
+  <span>:</span>
+  <span class="w-12 text-center font-mono">{{ timer.seconds }}с</span>
+</div>
       <div class="mt-2 text-blue-600 text-sm">Акция действует до 1 апреля 2026 года</div>
     </div>
   </div>
