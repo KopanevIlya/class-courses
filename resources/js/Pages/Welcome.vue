@@ -1,8 +1,35 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 defineProps({
     canLogin: Boolean,
+});
+
+// Счетчик до окончания акции
+const deadline = new Date('2026-04-01T00:00:00');
+const timer = ref({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+function updateTimer() {
+    const now = new Date();
+    const diff = deadline - now;
+    if (diff > 0) {
+        timer.value.days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        timer.value.hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        timer.value.minutes = Math.floor((diff / (1000 * 60)) % 60);
+        timer.value.seconds = Math.floor((diff / 1000) % 60);
+    } else {
+        timer.value.days = timer.value.hours = timer.value.minutes = timer.value.seconds = 0;
+    }
+}
+
+let interval;
+onMounted(() => {
+    updateTimer();
+    interval = setInterval(updateTimer, 1000);
+});
+onUnmounted(() => {
+    clearInterval(interval);
 });
 </script>
 
@@ -86,6 +113,55 @@ defineProps({
       </ul>
       <div class="mt-8 text-blue-800 text-xl font-semibold animate-fade-up animate-delay-700">
         <span>Внутренние чаты поддержки и общения доступны после входа.</span>
+      </div>
+    </section>
+
+
+        <!-- HOW IT WORKS: Как проходит обучение -->
+        <section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-blue-50 rounded-2xl shadow-lg animate-fade-up animate-delay-600">
+      <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-left">Как проходит обучение</h2>
+      <ul class="list-disc pl-5 text-blue-700 text-lg space-y-2 animate-fade-up animate-delay-700">
+        <li>Все занятия проходят <b>онлайн</b> в формате видеоконференций.</li>
+        <li>После каждого занятия <b>запись урока выкладывается на платформу</b>, доступна для просмотра в любое время.</li>
+        <li>Платформа с материалами, домашними заданиями и чатами для поддержки.</li>
+        <li>Можно учиться в удобном темпе, возвращаться к урокам и пересматривать их.</li>
+        <li>Обратная связь и разбор задач в прямом эфире и в чате.</li>
+      </ul>
+      <div class="mt-6 text-blue-900 text-lg font-semibold animate-fade-up animate-delay-800">
+        <span>Пропустил занятие? Не проблема — все записи доступны!</span>
+      </div>
+    </section>
+
+      <!-- PRICE BLOCK: Цена курса -->
+      <section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-700">
+      <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-right">Цена курса</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <div class="text-blue-900 text-xl font-semibold mb-2">
+            Курс состоит из <b>30 занятий</b> с практикой и поддержкой.
+          </div>
+          <div class="text-blue-700 text-lg mb-4">
+            <span class="bg-blue-100 px-3 py-1 rounded font-bold text-blue-900">Сейчас действует скидка!</span>
+          </div>
+          <div class="text-2xl font-bold mb-2">
+            <span class="text-blue-600">35 000 руб.</span>
+            <span class="text-blue-400 line-through ml-3 text-xl">45 000 руб.</span>
+          </div>
+          <div class="text-blue-800 text-base mb-4">В рассрочку или единоразово.</div>
+        </div>
+        <div class="flex-1 flex flex-col items-center">
+          <div class="text-blue-700 text-lg mb-2 font-semibold">До конца акции осталось:</div>
+          <div class="flex gap-2 text-2xl font-bold text-blue-900 bg-blue-100 rounded-xl px-6 py-3 animate-scale-in">
+            <span>{{ timer.days }}д</span>
+            <span>:</span>
+            <span>{{ timer.hours }}ч</span>
+            <span>:</span>
+            <span>{{ timer.minutes }}м</span>
+            <span>:</span>
+            <span>{{ timer.seconds }}с</span>
+          </div>
+          <div class="mt-2 text-blue-600 text-sm">Акция действует до 1 апреля 2026 года</div>
+        </div>
       </div>
     </section>
 
@@ -183,7 +259,10 @@ defineProps({
         </div>
         <div class="bg-blue-50 rounded-xl p-4 shadow animate-fade-up animate-delay-1300">
           <h3 class="font-semibold text-blue-700 mb-1">Как проходит обучение?</h3>
-          <p class="text-blue-800">Видеоуроки, практические задания, внутренние чаты для общения и поддержки.</p>
+          <p class="text-blue-800">
+            Все занятия проходят онлайн, после каждого урока запись выкладывается на платформу.<br>
+            Практические задания, поддержка и чаты доступны для всех участников.
+          </p>
         </div>
         <div class="bg-blue-50 rounded-xl p-4 shadow animate-fade-up animate-delay-1400">
           <h3 class="font-semibold text-blue-700 mb-1">Что если возникнут вопросы?</h3>
