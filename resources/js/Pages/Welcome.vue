@@ -133,37 +133,37 @@ onUnmounted(() => {
     </section>
 
       <!-- PRICE BLOCK: Цена курса -->
-      <section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-700">
-      <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-right">Цена курса</h2>
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="flex-1">
-          <div class="text-blue-900 text-xl font-semibold mb-2">
-            Курс состоит из <b>30 занятий</b> с практикой и поддержкой.
-          </div>
-          <div class="text-blue-700 text-lg mb-4">
-            <span class="bg-blue-100 px-3 py-1 rounded font-bold text-blue-900">Сейчас действует скидка!</span>
-          </div>
-          <div class="text-2xl font-bold mb-2">
-            <span class="text-blue-600">35 000 руб.</span>
-            <span class="text-blue-400 line-through ml-3 text-xl">45 000 руб.</span>
-          </div>
-          <div class="text-blue-800 text-base mb-4">В рассрочку или единоразово.</div>
-        </div>
-        <div class="flex-1 flex flex-col items-center">
-          <div class="text-blue-700 text-lg mb-2 font-semibold">До конца акции осталось:</div>
-          <div class="flex gap-2 text-2xl font-bold text-blue-900 bg-blue-100 rounded-xl px-6 py-3 animate-scale-in">
-            <span>{{ timer.days }}д</span>
-            <span>:</span>
-            <span>{{ timer.hours }}ч</span>
-            <span>:</span>
-            <span>{{ timer.minutes }}м</span>
-            <span>:</span>
-            <span>{{ timer.seconds }}с</span>
-          </div>
-          <div class="mt-2 text-blue-600 text-sm">Акция действует до 1 апреля 2026 года</div>
-        </div>
+<section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-700">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-right">Цена курса</h2>
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <div class="flex-1">
+      <div class="text-blue-900 text-xl font-semibold mb-2">
+        Курс состоит из <b>30 занятий</b> с практикой и поддержкой.
       </div>
-    </section>
+      <div class="text-blue-700 text-lg mb-4">
+        <span class="bg-blue-100 px-3 py-1 rounded font-bold text-blue-900">Сейчас действует скидка!</span>
+      </div>
+      <div class="text-2xl font-bold mb-2">
+        <span class="text-blue-600">35 000 руб.</span>
+        <span class="text-blue-400 line-through ml-3 text-xl">45 000 руб.</span>
+      </div>
+      <div class="text-blue-800 text-base mb-4">В рассрочку или единоразово.</div>
+    </div>
+    <div class="flex-1 flex flex-col items-center">
+      <div class="text-blue-700 text-lg mb-2 font-semibold">До конца акции осталось:</div>
+      <div class="flex gap-2 text-2xl font-bold text-blue-900 bg-blue-100 rounded-xl px-6 py-3">
+        <span>{{ timer.days }}д</span>
+        <span>:</span>
+        <span>{{ timer.hours }}ч</span>
+        <span>:</span>
+        <span>{{ timer.minutes }}м</span>
+        <span>:</span>
+        <span>{{ timer.seconds }}с</span>
+      </div>
+      <div class="mt-2 text-blue-600 text-sm">Акция действует до 1 апреля 2026 года</div>
+    </div>
+  </div>
+</section>
 
     <!-- Curriculum -->
     <section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 animate-fade-up animate-delay-700">
