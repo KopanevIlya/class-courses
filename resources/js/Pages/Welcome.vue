@@ -132,9 +132,9 @@ onUnmounted(() => {
       </div>
     </section>
 
-      <!-- PRICE BLOCK: Цена курса -->
-<section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg animate-fade-up animate-delay-700">
-  <h2 class="text-2xl font-bold text-blue-800 mb-4 animate-slide-right">Цена курса</h2>
+<!-- PRICE BLOCK: Цена курса -->
+<section class="relative z-10 max-w-5xl mx-auto px-4 py-8 mt-10 bg-white rounded-2xl shadow-lg">
+  <h2 class="text-2xl font-bold text-blue-800 mb-4">Цена курса</h2>
   <div class="flex flex-col md:flex-row items-center gap-8">
     <div class="flex-1">
       <div class="text-blue-900 text-xl font-semibold mb-2">
