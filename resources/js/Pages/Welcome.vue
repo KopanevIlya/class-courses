@@ -277,13 +277,18 @@ onUnmounted(() => {
 
     <!-- Footer -->
     <footer class="relative z-10 mt-auto py-6 px-4 bg-blue-600 text-white text-center animate-fade-up animate-delay-1600">
-      <div>
-        CLASS © 2026 
-      </div>
-      <div class="mt-2">
-        <span>Внутренние чаты поддержки и общения доступны после входа</span>
-      </div>
-    </footer>
+  <div>
+    CLASS © 2026 
+  </div>
+  <div class="mt-2">
+    <span>Внутренние чаты поддержки и общения доступны после входа</span>
+  </div>
+  <div class="mt-2">
+    <a href="/offer" target="_blank" rel="noopener" class="underline text-blue-200 hover:text-white">
+  Публичный договор (оферта)
+</a>
+  </div>
+</footer>
   </div>
 </template>
 

@@ -38,4 +38,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos');
 });
 
+Route::get('/offer', fn() => inertia('Offer'));
+
 require __DIR__.'/auth.php';
