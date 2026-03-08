@@ -276,18 +276,41 @@ onUnmounted(() => {
     </section>
 
     <!-- Footer -->
-    <footer class="relative z-10 mt-auto py-6 px-4 bg-blue-600 text-white text-center animate-fade-up animate-delay-1600">
-  <div>
-    CLASS © 2026 
-  </div>
-  <div class="mt-2">
-    <span>Внутренние чаты поддержки и общения доступны после входа</span>
-  </div>
-  <div class="mt-2">
-    <a href="/offer" target="_blank" rel="noopener" class="underline text-blue-200 hover:text-white">
-  Публичный договор (оферта)
-</a>
-<a href="/policy" target="_blank" rel="noopener" class="underline text-blue-200 hover:text-white">Политика конфиденциальности</a>
+    <footer class="relative z-10 mt-auto py-8 px-4 bg-blue-600 text-white border-t border-blue-700">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- Левая часть -->
+    <div class="flex flex-col items-center md:items-start">
+      <div class="text-lg font-semibold flex items-center gap-2">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle mr-1" viewBox="0 0 24 24">
+          <path d="M12 2l4 4h4v14H4V6h4l4-4z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        CLASS © 2026
+      </div>
+      <div class="text-sm mt-1 opacity-80">Внутренние чаты поддержки и общения доступны после входа</div>
+    </div>
+    <!-- Правая часть -->
+    <div class="flex flex-col items-center md:items-end">
+      <div class="flex gap-4 mt-2 md:mt-0">
+        <a href="/offer" target="_blank" rel="noopener" class="underline hover:text-blue-200 transition flex items-center gap-1">
+          <!-- Contract/Document icon -->
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
+            <rect x="4" y="2" width="16" height="20" rx="2" />
+            <line x1="8" y1="6" x2="16" y2="6" />
+            <line x1="8" y1="10" x2="16" y2="10" />
+            <line x1="8" y1="14" x2="16" y2="14" />
+          </svg>
+          Публичный договор (оферта)
+        </a>
+        <span class="text-blue-200">|</span>
+        <a href="/policy" target="_blank" rel="noopener" class="underline hover:text-blue-200 transition flex items-center gap-1">
+          <!-- Shield icon -->
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
+            <path d="M12 3l8 4v5c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V7l8-4z"/>
+          </svg>
+          Политика конфиденциальности
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
   </div>
