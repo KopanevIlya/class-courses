@@ -7,7 +7,7 @@ import { Head } from '@inertiajs/vue3';
   <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg my-12 text-blue-900 leading-relaxed">
     <h1 class="text-3xl font-bold mb-6">Публичный договор (оферта) на оказание информационно-консультационных услуг</h1>
     <div class="mb-4">г. Москва</div>
-    <div class="mb-4">11.11.2021 года</div>
+    <div class="mb-4">11.11.2024 года</div>
 
     <h2 class="text-xl font-bold mt-8 mb-4">1. ОБЩИЕ ПОЛОЖЕНИЯ</h2>
     <p>
