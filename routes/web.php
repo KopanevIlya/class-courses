@@ -39,5 +39,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/offer', fn() => inertia('Offer'));
+Route::get('/policy', fn() => inertia('Policy'));
 
 require __DIR__.'/auth.php';

@@ -287,6 +287,7 @@ onUnmounted(() => {
     <a href="/offer" target="_blank" rel="noopener" class="underline text-blue-200 hover:text-white">
   Публичный договор (оферта)
 </a>
+<a href="/policy" target="_blank" rel="noopener" class="underline text-blue-200 hover:text-white">Политика конфиденциальности</a>
   </div>
 </footer>
   </div>
