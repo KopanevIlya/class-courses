@@ -291,9 +291,10 @@ onUnmounted(() => {
     <!-- Правая часть -->
     <div class="flex flex-col items-center md:items-end">
       <div class="flex gap-4 mt-2 md:mt-0">
-        <a href="/offer" target="_blank" rel="noopener" class="underline hover:text-blue-200 transition flex items-center gap-1">
+        <a href="/offer" target="_blank" rel="noopener"
+           class="underline hover:text-blue-200 transition flex items-center gap-1 text-xs md:text-sm opacity-80">
           <!-- Contract/Document icon -->
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
             <rect x="4" y="2" width="16" height="20" rx="2" />
             <line x1="8" y1="6" x2="16" y2="6" />
             <line x1="8" y1="10" x2="16" y2="10" />
@@ -301,10 +302,11 @@ onUnmounted(() => {
           </svg>
           Публичный договор (оферта)
         </a>
-        <span class="text-blue-200">|</span>
-        <a href="/policy" target="_blank" rel="noopener" class="underline hover:text-blue-200 transition flex items-center gap-1">
+        <span class="text-blue-200 text-xs md:text-sm opacity-70">|</span>
+        <a href="/policy" target="_blank" rel="noopener"
+           class="underline hover:text-blue-200 transition flex items-center gap-1 text-xs md:text-sm opacity-80">
           <!-- Shield icon -->
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" class="inline-block align-middle" viewBox="0 0 24 24">
             <path d="M12 3l8 4v5c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V7l8-4z"/>
           </svg>
           Политика конфиденциальности
