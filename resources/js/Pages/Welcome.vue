@@ -7,7 +7,7 @@ defineProps({
 });
 
 // Счетчик до окончания акции
-const deadline = new Date('2026-04-01T00:00:00');
+const deadline = new Date('2026-05-11T00:00:00');
 const timer = ref({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
 function updateTimer() {
