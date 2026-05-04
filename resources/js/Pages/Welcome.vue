@@ -159,7 +159,7 @@ onUnmounted(() => {
   <span>:</span>
   <span class="w-12 text-center font-mono">{{ timer.seconds }}с</span>
 </div>
-      <div class="mt-2 text-blue-600 text-sm">Акция действует до 1 апреля 2026 года</div>
+      <div class="mt-2 text-blue-600 text-sm">Акция действует до 11 мая 2026 года</div>
     </div>
   </div>
 </section>
