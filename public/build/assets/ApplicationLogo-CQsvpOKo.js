@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as t,g as s}from"./app-CXeD-ZWi.js";const e="/build/assets/logo-6ykbjPb6.png",c={},r={src:e,style:{height:"35px"},alt:"CLASS"};function n(_,i){return t(),s("img",r)}const l=o(c,[["render",n]]);export{l as A};

@@ -50,37 +50,48 @@ onUnmounted(() => {
         </div>
 
         <!-- Header -->
-        <header class="relative z-10 max-w-7xl mx-auto px-4 py-6">
-            <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
-                <div class="flex items-center gap-3 animate-fade-down">
-                    <img src="../../../public/img/logo.png" style="height: 64px;" alt="CLASS" />
-                    <div>
-                        <div class="text-xl md:text-2xl font-black tracking-wide text-white">CLASS</div>
-                        <div class="text-xs md:text-sm text-blue-200/80">Новый уровень обучения разработке</div>
+        <header class="relative z-10 max-w-7xl mx-auto px-4 pt-4 md:pt-6">
+    <div class="rounded-2xl md:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 md:px-6 md:py-4 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <!-- brand -->
+            <div class="flex items-center gap-3">
+                <img
+                    src="/img/logo.png"
+                    alt="CLASS"
+                    class="h-12 sm:h-14 md:h-16 w-auto"
+                />
+                <div>
+                    <div class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-none">
+                        CLASS
+                    </div>
+                    <div class="text-xs sm:text-sm text-blue-200/80 mt-1 max-w-[180px] sm:max-w-none leading-snug">
+                        Новый уровень обучения разработке
                     </div>
                 </div>
-
-                <div class="flex items-center gap-3">
-                    <a
-                        href="https://max.ru/u/f9LHodD0cOJyH5Ib7C3jIeAsA2zpnWueT4xGaSy3KXm6XkOnHv3XLUH3Bf0"
-                        target="_blank"
-                        rel="noopener"
-                        title="Мессенджер Max"
-                        class="group rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur-md transition duration-300 hover:scale-110 hover:bg-white/10"
-                    >
-                        <img src="../../../public/img/max.png" alt="Max Messenger" class="w-7 h-7 rounded-full shadow-lg" />
-                    </a>
-
-                    <Link
-                        v-if="canLogin"
-                        href="/login"
-                        class="rounded-xl bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-500 px-5 py-2.5 text-sm md:text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition duration-300 hover:scale-105 hover:shadow-[0_15px_40px_rgba(168,85,247,0.45)]"
-                    >
-                        Войти
-                    </Link>
-                </div>
             </div>
-        </header>
+
+            <!-- actions -->
+            <div class="flex items-center gap-3 w-full md:w-auto">
+                <a
+                    href="https://max.ru/u/f9LHodD0cOJyH5Ib7C3jIeAsA2zpnWueT4xGaSy3KXm6XkOnHv3XLUH3Bf0"
+                    target="_blank"
+                    rel="noopener"
+                    class="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2.5 backdrop-blur-md transition hover:bg-white/10"
+                >
+                    <img src="/img/max.png" alt="Max Messenger" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full" />
+                </a>
+
+                <Link
+                    v-if="canLogin"
+                    href="/login"
+                    class="flex-1 md:flex-none text-center rounded-xl bg-gradient-to-r from-blue-500 via-cyan-400 to-fuchsia-500 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base font-bold text-white shadow-[0_10px_30px_rgba(59,130,246,0.45)] transition hover:scale-[1.02]"
+                >
+                    Войти
+                </Link>
+            </div>
+        </div>
+    </div>
+</header>
 
         <!-- Hero -->
         <section class="relative z-10 max-w-7xl mx-auto px-4 pt-8 pb-20">
